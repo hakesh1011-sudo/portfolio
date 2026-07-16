@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hakesh V — AI/ML Engineer</title>
+<meta name="description" content="Hakesh V — BE CSE (AI/ML) student & ML intern. Deep learning, NLP, Python, MySQL." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0C1017; --surface:#141A24; --surface-2:#1B2331;
+    --teal:#5EEAD4; --amber:#FBBF24;
+    --text:#EEF1F6; --muted:#8B95A7; --border:#222c3d;
+    --f-display:'Space Grotesk',sans-serif;
+    --f-body:'Inter',sans-serif;
+    --f-mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--f-display);font-weight:600;letter-spacing:-0.02em;line-height:1.1;margin:0}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  code,.mono{font-family:var(--f-mono)}
+
+  /* nav */
+  nav.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(12,16,23,.72);border-bottom:1px solid var(--border)}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--f-mono);font-weight:500;font-size:15px}
+  .logo b{color:var(--teal)}
+  .navlinks{display:flex;gap:28px;font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+  .navlinks a:hover{color:var(--teal)}
+  @media(max-width:640px){.navlinks{display:none}}
+
+  /* hero */
+  section{padding:96px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:12px;color:var(--muted);border:1px solid var(--border);background:var(--surface);padding:6px 12px;border-radius:999px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(94,234,212,.6);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(94,234,212,.55)}70%{box-shadow:0 0 0 10px rgba(94,234,212,0)}100%{box-shadow:0 0 0 0 rgba(94,234,212,0)}}
+  h1.hero{font-size:clamp(40px,6.5vw,72px);margin-top:24px}
+  h1.hero .acc{color:var(--teal)}
+  .tag{color:var(--muted);max-width:640px;margin-top:20px;font-size:17px}
+  .ctas{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-family:var(--f-mono);font-size:14px;border:1px solid transparent;transition:.2s;cursor:pointer}
+  .btn.primary{background:var(--teal);color:#0C1017;font-weight:600}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px var(--teal)}
+  .btn.ghost{border-color:var(--border);color:var(--text)}
+  .btn.ghost:hover{border-color:var(--teal);color:var(--teal)}
+
+  /* loss panel */
+  .panel{margin-top:56px;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+  .panel-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+  .panel-head .dots{display:flex;gap:6px}
+  .panel-head .dots span{width:10px;height:10px;border-radius:50%;background:#2a3446}
+  .panel-body{padding:20px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+  @media(max-width:720px){.panel-body{grid-template-columns:1fr}}
+  .stats{display:flex;flex-direction:column;gap:14px;font-family:var(--f-mono);font-size:12px;min-width:160px}
+  .stats div span{color:var(--muted);display:block;font-size:11px;margin-bottom:2px}
+  .stats div b{color:var(--teal);font-weight:500;font-size:15px}
+  .stats div.amber b{color:var(--amber)}
+
+  /* sections */
+  .kicker{font-family:var(--f-mono);font-size:12px;color:var(--teal);text-transform:uppercase;letter-spacing:.15em}
+  h2.sec{font-size:clamp(28px,4vw,42px);margin:12px 0 40px}
+
+  /* skills */
+  .nodes{display:flex;flex-wrap:wrap;gap:10px}
+  .node{font-family:var(--f-mono);font-size:13px;padding:10px 16px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--text);transition:.2s;cursor:default}
+  .node:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+
+  /* projects */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;transition:.2s}
+  .card:hover{transform:translateY(-4px);border-color:var(--teal)}
+  .cat{font-family:var(--f-mono);font-size:11px;letter-spacing:.15em;color:var(--amber);text-transform:uppercase}
+  .card h3{font-size:20px;margin:10px 0 8px}
+  .card p{color:var(--muted);font-size:14px;margin:0 0 16px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-family:var(--f-mono);font-size:11px;padding:4px 10px;border-radius:6px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+
+  /* timeline */
+  .timeline{position:relative;padding-left:28px}
+  .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--border)}
+  .titem{position:relative;padding-bottom:32px}
+  .titem::before{content:"";position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--teal);box-shadow:0 0 0 4px rgba(94,234,212,.08)}
+  .titem .date{font-family:var(--f-mono);font-size:12px;color:var(--amber)}
+  .titem h3{font-size:18px;margin:4px 0}
+  .titem span.inst{color:var(--muted);font-size:14px}
+
+  /* contact */
+  .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+  .ccard{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:.2s}
+  .ccard:hover{border-color:var(--teal);transform:translateY(-2px)}
+  .ccard .lbl{font-family:var(--f-mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.15em}
+  .ccard .val{font-family:var(--f-mono);font-size:14px;color:var(--text);margin-top:8px;word-break:break-all}
+  .ccard:hover .val{color:var(--teal)}
+
+  footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-family:var(--f-mono);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="logo">hakesh<b>.dev</b></div>
+    <div class="navlinks">
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#education">education</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>available for internship opportunities</span>
+    <h1 class="hero"><b>Hakesh.V</b></h1>
+    <p class="tag">Hi, I'm Hakesh V — a 3rd year BE CSE (AI/ML) student building with deep learning, NLP, and Python. Currently exploring internship roles where I can turn research into real products.</p>
+    <div class="ctas">
+      <a class="btn primary" href="https://github.com/hakesh1011-sudo" target="_blank" rel="noopener">view projects →</a>
+      <a class="btn ghost" href="#contact">get in touch</a>
+    </div>
+
+    <div class="panel" aria-label="training loss log">
+      <div class="panel-head">
+        <span>training_loss.log</span>
+        <span class="dots"><span></span><span></span><span></span></span>
+      </div>
+      <div class="panel-body">
+        <svg id="lossSvg" viewBox="0 0 600 220" width="100%" style="max-width:100%;height:auto">
+          <defs>
+            <linearGradient id="gfill" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#5EEAD4" stop-opacity=".25"/>
+              <stop offset="100%" stop-color="#5EEAD4" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- grid -->
+          <g stroke="#222c3d" stroke-width="1">
+            <line x1="0" y1="40" x2="600" y2="40"/>
+            <line x1="0" y1="90" x2="600" y2="90"/>
+            <line x1="0" y1="140" x2="600" y2="140"/>
+            <line x1="0" y1="190" x2="600" y2="190"/>
+          </g>
+          <path id="lossFill" d="" fill="url(#gfill)" opacity="0"/>
+          <path id="lossPath" d="" fill="none" stroke="#5EEAD4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="stats">
+          <div><span>epoch</span><b>128 / 128</b></div>
+          <div><span>loss</span><b>0.0247</b></div>
+          <div class="amber"><span>accuracy</span><b>96.4%</b></div>
+          <div><span>status</span><b>converged</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="kicker">// section_02</div>
+    <h2 class="sec">Skills & toolkit</h2>
+    <div class="nodes">
+      <span class="node">deep_learning</span>
+      <span class="node">nlp</span>
+      <span class="node">python</span>
+      <span class="node">mysql</span>
+      <span class="node">tensorflow</span>
+      <span class="node">pytorch</span>
+      <span class="node">scikit-learn</span>
+      <span class="node">pandas</span>
+      <span class="node">numpy</span>
+      <span class="node">transformers</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="kicker">// section_03</div>
+    <h2 class="sec">Selected models</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="cat">NLP · Classification</div>
+        <h3>Sentiment analyzer</h3>
+        <p>Transformer-based model fine-tuned for multi-class sentiment on product reviews with a clean inference API.</p>
+        <div class="chips"><span class="chip">python</span><span class="chip">pytorch</span><span class="chip">transformers</span></div>
+      </article>
+      <article class="card">
+        <div class="cat">Deep Learning · Vision</div>
+        <h3>Image classifier</h3>
+        <p>CNN trained from scratch on a custom dataset with data augmentation, dropout, and learning-rate scheduling.</p>
+        <div class="chips"><span class="chip">tensorflow</span><span class="chip">keras</span><span class="chip">numpy</span></div>
+      </article>
+      <article class="card">
+        <div class="cat">NLP · Generation</div>
+        <h3>Text summarizer</h3>
+        <p>Abstractive summarization pipeline using a pretrained seq2seq backbone with ROUGE-based evaluation.</p>
+        <div class="chips"><span class="chip">python</span><span class="chip">huggingface</span><span class="chip">nltk</span></div>
+      </article>
+      <article class="card">
+        <div class="cat">Data · Backend</div>
+        <h3>Analytics dashboard</h3>
+        <p>SQL-driven analytics with a Python ETL layer feeding a lightweight dashboard for exploratory insights.</p>
+        <div class="chips"><span class="chip">mysql</span><span class="chip">pandas</span><span class="chip">python</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="kicker">// section_04</div>
+    <h2 class="sec">Education & certifications</h2>
+    <div class="timeline">
+      <div class="titem">
+        <div class="date">2024 — 2028 (in progress)</div>
+        <h3>B.E. Computer Science — AI & Machine Learning</h3>
+        <span class="inst">3rd year undergraduate</span>
+      </div>
+      <div class="titem">
+        <div class="date">2024</div>
+        <h3>Deep Learning Specialization</h3>
+        <span class="inst">Coursework · neural networks, CNNs, sequence models</span>
+      </div>
+      <div class="titem">
+        <div class="date">2024</div>
+        <h3>Natural Language Processing</h3>
+        <span class="inst">Coursework · embeddings, transformers, fine-tuning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="kicker">// section_05</div>
+    <h2 class="sec">Get in touch</h2>
+    <div class="cgrid">
+      <a class="ccard" href="mailto:hakesh1011@gmail.com"><div class="lbl">email</div><div class="val">hakesh1011@gmail.com</div></a>
+      <a class="ccard" href="https://github.com/hakesh1011-sudo" target="_blank" rel="noopener"><div class="lbl">github</div><div class="val">@hakesh1011-sudo</div></a>
+      <a class="ccard" href="https://www.linkedin.com/in/hakesh-v-0b18b63a7" target="_blank" rel="noopener"><div class="lbl">linkedin</div><div class="val">hakesh-v</div></a>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Hakesh V · built with curiosity + caffeine</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // build a decreasing loss curve
+  (function(){
+    const W=600,H=220,N=60;
+    const pts=[];
+    for(let i=0;i<N;i++){
+      const x=(i/(N-1))*W;
+      const t=i/(N-1);
+      // exponential decay + a little noise
+      const base = 200*Math.exp(-3.2*t) + 10;
+      const noise = (Math.sin(i*1.7)+Math.cos(i*0.9))*3*(1-t);
+      const y = base + noise;
+      pts.push([x, Math.max(15,Math.min(210,y))]);
+    }
+    const d = pts.map((p,i)=> (i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+    const fill = d + ` L ${W} ${H} L 0 ${H} Z`;
+    const path=document.getElementById('lossPath');
+    const fillP=document.getElementById('lossFill');
+    path.setAttribute('d',d);
+    fillP.setAttribute('d',fill);
+    const len=path.getTotalLength();
+    path.style.strokeDasharray=len;
+    path.style.strokeDashoffset=len;
+    path.style.transition='stroke-dashoffset 2.2s ease-out';
+    fillP.style.transition='opacity 1.2s ease-out 1s';
+    requestAnimationFrame(()=>{
+      path.style.strokeDashoffset=0;
+      fillP.style.opacity=1;
+    });
+  })();
+</script>
+</body>
+</html>
